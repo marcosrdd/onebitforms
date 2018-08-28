@@ -8,6 +8,10 @@ require 'rspec/rails'
 
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 config.include Devise::Test::ControllerHelpers, type: :controller
+# Custom json helpers
+config.include Requests::JsonHelpers, type: :request
+# Custom Header helpers
+config.include Requests::HeaderHelpers, type: :request
 
 # Add additional requires below this line. Rails is not loaded until this point!
 
